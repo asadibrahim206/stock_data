@@ -1,11 +1,15 @@
+import yfinance as yf
 import pandas as pd
 
-dict ={
-    "NAME": ['asad','muhsin','afaq'],
-    "AGE"  : [24,32,12,33],
-    "CGPA" : [3.1,3.0,2.4,2.2]
-}
+# Get Apple stock data
+ticker = yf.Ticker("AAPL")
 
-z = pd.DataFrame(dict)
+url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/data/apple.json"
 
-print(z)
+import json
+with open('apple.json') as json_file:
+    apple_info = json.load(json_file)
+    # Print the type of data variable    
+    #print("Type:", type(apple_info))
+apple_info
+
